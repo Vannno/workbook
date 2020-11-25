@@ -1,60 +1,38 @@
 # README
 
-
 ## users テーブル
 
-| Column              | Type   | Options     |                                 
+| Column              | Type   | Options     |                               
 | --------            | ------ | ----------- |
-| nickname            | string | null: false |
+| name                | string | null: false |
 | email               | string | null: false |
 | encrypted_password  | string | null: false |
 ### Association
-- has_many :records
-- has_many :items
+- has_many :questions
+- has_many :answers
 
 
+## questions テーブル
 
-
-## selection テーブル
 | Column        | Type       | Options           |
-| ------        | ---------- | -----------       |
-| level         | references | foreign_key: true |
-|               | references | foreign_key: true |
-### Association
- - belongs_to :user 
- - belongs_to :item
- - has_one :address
+| --------      | ------     | -----------       |
+|  word         | string     | null:false        |
+|  sentence     | text       | null:false        |
 
-
-
-## English テーブル
-
-| Column               | Type       | Options           |
-| --------             | ------     | -----------       |
-|  words               | string     | null:false        |
-|  idiom               | text       | null:false        |
-| category_id          | integer    | null:false        |
-| item_status_id       | integer    | null:false        |
-| burden_charges_id    | integer    | mull:false        |
-| delivery_source_id   | integer    | null:fa;se        |
-| days_ship_id         | integer    | null:false        |
-| value                | integer    | null:false        |
-| user                 | references | foreign_key: true |
 ### Association
 - belongs_to :user
-- has_one :record
+- has_one    :answer
 
 
-## Japanese テーブル
+## answers テーブル
 
 | Column         | Type       | Options          |
 | --------       | ------     | -----------      |
 | Japanese       | string     | null: false
-| prefecture_id  | integer    | null: false      |
-| city           | string     | null: false      |
-| place          | string     | null: false      |
-| building_name  | string
-| phone_number   | string     | null: false      |
-| record         | references | foreign_key:true |
+| Commentary     | text       | null: false      |
+
 ### Association
-- belongs_to :record
+- belongs_to :user
+- belongs_to :question 
+
+
