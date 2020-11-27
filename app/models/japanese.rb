@@ -1,2 +1,0 @@
-class Japanese < ApplicationRecord
-end
