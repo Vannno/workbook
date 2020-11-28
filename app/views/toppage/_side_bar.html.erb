@@ -1,6 +1,6 @@
 <div class="side-bar-header">
   <div class="user-name">
-    <a href="#">猫</a>
+      <%= link_to current_user.name, edit_user_path(current_user) %>
   </div>
   <div class="create-question">
     <a href="#">create-question</a>
