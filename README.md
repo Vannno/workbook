@@ -9,46 +9,43 @@
 | encrypted_password  | string | null: false |
 
 ### Association
-- has_many :questions
-- has_many :answers
-
+- has_many :question_users
+- has_many :questions, through: question_users
+- has_many : answers
 
 ## questions テーブル
 
 | Column        | Type       | Options           |
 | --------      | ------     | -----------       |
-|  word         | string     | null:false        |
-|  sentence     | text       | null:false        |
+|  name         | string     | null:false        |
 
 ### Association
-- belongs_to :users
-- has_one    :answer
+- has_many :question_users
+- has_many :users, through: question_users
+- has_many :answers
 
+
+## question_users テーブル
+
+| Column      | Type       | Options          |
+| --------    | ------     | -----------      |
+| user        | string     | null: false, foreign_key: true | 
+| question    | text       | null: false, foreign_key: true |      
+
+### Association
+- belongs_to :question
+- belongs_to :user 
 
 ## answers テーブル
 
 | Column         | Type       | Options          |
 | --------       | ------     | -----------      |
-| Japanese       | string     | null: false
-| Commentary     | text       | null: false      |
+| content        | string     |                  |
+| user           | string     | null: false
+| question       | text       | null: false     |
 
 ### Association
 - belongs_to :user
 - belongs_to :question 
-
-
-
-## toppages テーブル
-
-| Column    | Type       | Options                        |
-| -------   | ---------- | ------------------------------ |
-| content   | string     |                                |
-| user      | references | null: false, foreign_key: true |
-| question  | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to question
 
 
