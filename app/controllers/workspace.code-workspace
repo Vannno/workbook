@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "workbook",
+			"path": "../.."
+		},
+		{
+			"name": "use-materials",
+			"path": "../../../../../../Applications/use-materials"
+		},
+		{
+			"path": "../../../../../../Applications/room-matarials"
+		}
+	],
+	"settings": {}
+}
