@@ -1,9 +1,9 @@
 <div class='chat-room-form'>
-  <h1>新規チャットルーム</h1>
+  <h1>問題作成ページ</h1>
   <%=form_with model: @question, local: true do |f|%>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
-        <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
+        <%= f.label :タイトル, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
         <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
@@ -25,6 +25,21 @@
       <input name="question[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
+    
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <%= f.label :問題文作成, class: 'chat-room-form__label'%>
+      </div>
+      <div class='chat-room-form__field--right'>
+        <%= f.text_area :text, placeholder: "text", rows: "15", cols: "60" %>
+          <label class="form-image">
+          <span class="image-file">画像</span>
+          <%= f.file_field :image, class: 'hidden' %>
+        </label>
+      </div>
+    </div>
+
+    
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'></div>
       <div class='chat-room-form__field--right'>
