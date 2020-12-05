@@ -3,7 +3,7 @@
 
 # README
 
-## users テーブル
+:blush:users テーブル
 
 | Column              | Type   | Options     |                               
 | --------            | ------ | ----------- |
@@ -16,7 +16,9 @@
 - has_many :questions, through: question_users
 - has_many : answers
 
-## questions テーブル
+
+
+:question:questions テーブル
 
 | Column        | Type       | Options           |
 | --------      | ------     | -----------       |
@@ -28,7 +30,9 @@
 - has_many :answers
 
 
-## question_users テーブル
+
+
+:question::blush:question_users テーブル
 
 | Column      | Type       | Options          |
 | --------    | ------     | -----------      |
@@ -38,6 +42,9 @@
 ### Association
 - belongs_to :question
 - belongs_to :user 
+
+
+
 
 :dart:answers テーブル
 
