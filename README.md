@@ -1,3 +1,6 @@
+
+<img width="896" alt="image" src="https://user-images.githubusercontent.com/72539482/101239713-2d6b6100-372d-11eb-83ec-3b160bc508da.png">
+
 # README
 
 ## users テーブル
