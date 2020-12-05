@@ -39,7 +39,7 @@
 - belongs_to :question
 - belongs_to :user 
 
-## answers テーブル
+:dart:answers テーブル
 
 | Column         | Type       | Options          |
 | --------       | ------     | -----------      |
