@@ -11,20 +11,35 @@
     </div>
     <div class='chat-room-form__field'>
     </div>
-  
+    <div class='chat-room-form__field'>
+      <div class='chat-room-form__field--left'>
+        <label class='chat-room-form__label' for='chat_room_チャットメンバー'></label>
+      </div>
+      <div class='chat-room-form__field--right'>
+      <select name="question[user_ids][]">
+        <option value="">チャットするユーザーを選択してください</option>
+        <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%= user.id %>><%= user.name %></option>
+        <% end %>
+      </select>
+      <input name="question[user_ids][]" type="hidden" value=<%= current_user.id %>>
+      </div>
+    </div>
+    
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <%= f.label :問題文作成, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
         <%= f.text_area :text, placeholder: "text", rows: "15", cols: "60" %>
-      <label class="form-image">
-        <span class="image-file">画像</span>
+          <label class="form-image">
+          <span class="image-file">画像</span>
         <%= f.file_field :image, class: 'hidden', placeholder: "Image Url" %>
-      </label>
+        </label>
       </div>
     </div>
 
+    
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'></div>
       <div class='chat-room-form__field--right'>
