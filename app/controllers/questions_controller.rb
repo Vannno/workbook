@@ -20,6 +20,6 @@ class QuestionsController < ApplicationController
 
   private 
   def question_params
-    params.require(:question).permit(:text, :name, user_ids: [])
+    params.require(:question).permit(:image, :text, :name, user_ids: [])
   end
 end
