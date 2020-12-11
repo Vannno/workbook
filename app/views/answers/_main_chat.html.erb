@@ -2,10 +2,12 @@
   <div class="left-header">
     <div class="header-title">
       <%= @question.name %>
-      <div class="sentence">
-        <%= @question.text%>
+      <div class="image"> 
+        <%= image_tag @question.image.variant(resize:'150x400').processed, class: 'message-image'if @question.image.attached? %> 
       </div>
-      <%# <%= image_tag @question.image.variant(resize: '500×500'), class: 'message-image'if @question.image.attached? %> 
+      <div class="sentence">
+        <%= @question.text%>      
+      </div>
     </div>
   </div>
   <div class="right-header">
@@ -13,9 +15,6 @@
         <%= link_to "削除", question_path(@question), method: :delete %>
     </div>
   </div>
-  <%# <div class="sentence">
-    <%= @question.text%>
-  <%# </div> %> 
 </div>
 
 <div class="messages">

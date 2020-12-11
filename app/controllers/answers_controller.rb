@@ -1,11 +1,12 @@
 class AnswersController < ApplicationController
     
-  
   def index
     @answer = Answer.new
     @question = Question.find(params[:question_id])
     @answers = @question.answers.includes(:user)
   end
+
+  
 
   def create
     @question = Question.find(params[:question_id])
@@ -21,7 +22,8 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-      params.require(:answer).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:answer).permit(:content).merge(user_id: current_user.id)
   end
 
+  
 end

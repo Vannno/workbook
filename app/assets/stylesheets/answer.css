@@ -67,13 +67,22 @@
   margin-top: 36px;
 }
 
+.image {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+}
+
+
 .sentence {
   color: black;
   font-size: 15px;
   position: absolute;
-  top: 110px;
-  left: 320px;
+  top: 220px;
+  left: 330px;
 }
+
+
 
 .header-button {
   margin-top: 40px;
